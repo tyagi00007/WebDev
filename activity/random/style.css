@@ -1,0 +1,4 @@
+#ulTasks li.done{
+    color: rgb(95, 87, 87);
+    text-decoration: line-through;
+}

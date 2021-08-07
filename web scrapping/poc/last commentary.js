@@ -1,7 +1,7 @@
 let request=require('request');
 let cheerio=require('cheerio');
 
-request("https://www.npmjs.com/package/cheerio",cb);
+request("https://www.espncricinfo.com/series/ipl-2020-21-1210595/royal-challengers-bangalore-vs-sunrisers-hyderabad-eliminator-1237178/ball-by-ball-commentary",cb);
 console.log("before");
 function cb(error,response,html)
 {
@@ -25,8 +25,8 @@ function dataExtractor(html)
 {
 
 let searchTool=cheerio.load(html);
-let elem=searchTool("#readme>h1");
-let module=elem.text().trim();
+let elem=searchTool(".match-comment-wrapper .match-comment-long-text");
+let module=searchTool(elem[0]).text();
 console.log("moduleName",module);
 
 }
